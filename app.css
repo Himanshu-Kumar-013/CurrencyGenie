@@ -9,130 +9,227 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #8360c3, #2ebf91);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* More subtle gradient for a professional look */
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); 
+    font-family: 'Poppins', sans-serif; /* A more modern font */
     color: #333;
 }
 
 .container {
     background-color: white;
-    padding: 2.5rem;
+    padding: 2.8rem 2.5rem; /* Increased padding for more breathing room */
     border-radius: 1.5rem;
     min-height: 50vh;
-    width: 420px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    width: 450px; /* Slightly wider for better spacing */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Softer, more spread shadow */
     text-align: center;
+    border: 1px solid #e0e0e0; /* Subtle border for definition */
 }
 
 h2 {
     font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: #3a3a3a;
-    font-weight: 600;
+    margin-bottom: 2rem; /* More space below heading */
+    color: #2c3e50; /* Darker, more professional color */
+    font-weight: 700; /* Bolder for prominence */
 }
 
 form {
-    margin: 2rem 0 1.5rem 0;
+    margin: 0; /* Remove top/bottom margin from form */
 }
 
 form select,
 button,
-input {
+input[type="text"] { /* Target text inputs specifically */
     width: 100%;
     border: none;
     outline: none;
     border-radius: 0.75rem;
-    font-family: inherit;
+    font-family: 'Poppins', sans-serif;
 }
 
-form input {
-    margin-top: 0.8rem;
-    border: 1px solid #d0d0d0;
-    font-size: 1.1rem;
-    height: 3rem;
-    padding-left: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-form input:focus {
-    border-color: #888;
-    box-shadow: 0 0 5px rgba(131, 96, 195, 0.3);
+.amount {
+    margin-bottom: 1.5rem; /* Space below amount section */
 }
 
 .amount p {
     text-align: left;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem; /* Space below label */
     font-weight: 500;
     color: #555;
+    font-size: 1.05rem;
+}
+
+form input[type="text"] {
+    border: 1px solid #dcdcdc;
+    font-size: 1.15rem; /* Slightly larger text */
+    height: 3.2rem; /* Taller input field */
+    padding: 0 1.2rem; /* More horizontal padding */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fcfcfc; /* Slightly off-white for depth */
+}
+
+form input[type="text"]:focus {
+    border-color: #a1c4fd; /* Matches background accent */
+    box-shadow: 0 0 0 3px rgba(161, 196, 253, 0.3); /* Subtle blue glow on focus */
 }
 
 .dropdown {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
+    align-items: flex-start; /* Align items to the top to prevent icon shifting */
+    margin-top: 1.8rem;
+    gap: 1.5rem; /* More space between dropdown sections */
+}
+
+.dropdown .from,
+.dropdown .to {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text labels to the left */
+}
+
+.dropdown p {
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: #555;
+    font-size: 1.05rem;
+    text-align: left; /* Ensure labels are left-aligned */
+    width: 100%; /* Make paragraph take full width */
 }
 
 .dropdown i {
-    font-size: 1.8rem;
-    margin-top: 1rem;
+    font-size: 1.6rem; /* Slightly smaller icon */
+    margin-top: 2.8rem; /* Align icon better with select containers */
     color: #6a6a6a;
+    align-self: center; /* Center icon vertically */
 }
 
 .select-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 7.5rem;
+    flex-direction: column; /* Stack img, select, and search input */
+    align-items: center; /* Center contents horizontally within container */
+    width: 100%; /* Take full width of parent (.from / .to) */
     border-radius: 0.75rem;
     border: 1px solid #d0d0d0;
     overflow: hidden;
     background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding-top: 0.8rem; /* Padding at the top for flag */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for containers */
 }
 
 .select-container:hover {
-    border-color: #b0b0b0;
+    border-color: #a1c4fd; /* Consistent hover color */
+    box-shadow: 0 2px 10px rgba(161, 196, 253, 0.2);
 }
 
 .select-container img {
-    max-width: 2.2rem;
-    margin-left: 0.5rem;
+    max-width: 2.5rem; /* Slightly larger flags */
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Clearer shadow for flags */
+    margin-bottom: 0.6rem; /* Space below flag */
 }
 
 .select-container select {
     font-size: 1rem;
-    width: auto;
-    padding: 0.7rem 0.5rem;
+    padding: 0.7rem 1rem; /* More padding for select */
     background-color: transparent;
     cursor: pointer;
     appearance: none;
+    text-align-last: center; /* Center the selected text value */
+    direction: ltr; /* Ensure text direction is left-to-right */
+    padding-right: 2rem; /* Space for dropdown arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a4a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+}
+
+.select-container .search-currency {
+    width: calc(100% - 2rem); /* Adjust width to fit padding */
+    margin: 0.5rem 1rem 0.8rem 1rem; /* Spacing for search input */
+    border: 1px solid #e0e0e0; /* Lighter border for search input */
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    padding: 0.6rem 0.8rem; /* Padding for search text */
+    font-size: 0.95rem;
+    height: auto;
+    background-color: #f3f3f3; /* Slightly darker background */
+}
+
+.select-container .search-currency:focus {
+    border-color: #a1c4fd;
+    box-shadow: 0 0 0 2px rgba(161, 196, 253, 0.2);
 }
 
 .msg {
-    margin: 2.5rem 0 1.5rem 0;
-    font-size: 1.3rem;
+    margin: 2.5rem 0 2rem 0; /* More vertical space */
+    font-size: 1.35rem; /* Slightly larger font */
     color: #444;
     font-weight: 600;
     line-height: 1.4;
 }
 
 form button {
-    height: 3.5rem;
-    background-color: #8360c3;
-    color: white;
-    font-size: 1.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    height: 3.8rem; /* Taller buttons */
+    font-size: 1.3rem; /* Larger font on buttons */
     font-weight: 600;
     letter-spacing: 0.5px;
-    box-shadow: 0 5px 15px rgba(131, 96, 195, 0.3);
+    margin-top: 1.2rem; /* More space between button and elements above */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Consistent button shadow */
 }
 
-form button:hover {
-    background-color: #6a4da8;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(131, 96, 195, 0.4);
+form button.get-rate-btn {
+    background-color: #4CAF50; /* A friendly green */
+    color: white;
+    border: none;
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
+form button.get-rate-btn:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+form button.reset-btn {
+    background-color: #f44336; /* A clear red for reset */
+    color: white;
+    border: none;
+    box-shadow: 0 6px 15px rgba(244, 67, 54, 0.3);
+}
+
+form button.reset-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 2rem 1.5rem;
+    }
+
+    .dropdown {
+        flex-direction: column; /* Stack dropdowns vertically */
+        align-items: stretch; /* Stretch to full width */
+        gap: 2rem; /* More space when stacked */
+    }
+
+    .dropdown i {
+        margin: 1.5rem auto; /* Center the icon when stacked */
+        transform: rotate(90deg); /* Rotate arrow for vertical layout */
+    }
+
+    .select-container {
+        width: 100%; /* Ensure they take full width */
+    }
+
+    form button {
+        height: 3.5rem;
+        font-size: 1.2rem;
+    }
 }
